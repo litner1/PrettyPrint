@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<root>
+		<example>
+			Here is a literal less-than: < and greater-than: ></example>
+		<data>
+			This is a normal <tag>
+				 with text inside.</data>
+			<escaped>
+				Use < for < and > for > in XML.</escaped>
+			</root>
+		
