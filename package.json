@@ -17,7 +17,14 @@
         "command": "prettyprint.helloWorld",
         "title": "Hello World"
       }
-    ]
+    ],
+    "keybindings": [
+      {
+          "command": "prettyprint.helloWorld",
+          "key": "shift+alt+f",
+          "when": "editorTextFocus"
+      }
+  ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
