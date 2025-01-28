@@ -1,4 +1,3 @@
-import { delimiter } from 'path';
 import * as vscode from 'vscode';
 
 export async function replaceDocumentContent(editor: vscode.TextEditor, newText: string): Promise<boolean> {
@@ -16,7 +15,6 @@ export async function replaceDocumentContent(editor: vscode.TextEditor, newText:
         console.error("Edit operation failed.");
         return false;
     }
-
     // Log the updated document content for debugging
     console.log("Updated document content:\n", editor.document.getText());
     return true;
@@ -39,8 +37,8 @@ export async function deleteWhiteSigns(editor: vscode.TextEditor) {
 
     const text = editor.document.getText()
     let newText = text;
-    newText = newText.replace(/[\n\r\t]/gm, "");
-    newText = newText.replace(/\s\s+/g, ' ');
+    newText = newText.replace(/[\n\r\t]/gm, "");//replace new lines and tabulators
+    newText = newText.replace(/\s\s+/g, ' ');//normalize space
     await replaceDocumentContent(editor, newText);
 }
 
@@ -49,15 +47,15 @@ export async function lineSplit(editor: vscode.TextEditor) {
 
     const text = editor.document.getText()
     let newText = text
-    newText = newText.replaceAll("< ", "XXX");
-    newText = newText.replaceAll(" >", "YYY");
+    newText = newText.replaceAll("< ", "f561aaf6ef0bf14d4208bb46a4ccb3ad");//replacing not tags with random hash
+    newText = newText.replaceAll(" >", "f0a4058fd33489695d53df156b77c724");
     newText = newText.replaceAll("<", "\n<");
     newText = newText.replaceAll("\n</", "</");
     newText = newText.replaceAll("><", ">\n<");
     newText = newText.replaceAll("> <", ">\n<");
     newText = newText.replaceAll("> ", ">");
-    newText = newText.replaceAll("XXX", "< ");
-    newText = newText.replaceAll("YYY", " >");
+    newText = newText.replaceAll("f561aaf6ef0bf14d4208bb46a4ccb3ad", "< ");
+    newText = newText.replaceAll("f0a4058fd33489695d53df156b77c724", " >");
 
     await replaceDocumentContent(editor, newText);
 }

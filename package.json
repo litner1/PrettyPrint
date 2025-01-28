@@ -1,6 +1,7 @@
 {
   "name": "prettyprint",
   "displayName": "PrettyPrint",
+  "publisher": "Splitner",
   "description": "",
   "version": "0.0.1",
   "engines": {
@@ -14,13 +15,13 @@
   "contributes": {
     "commands": [
       {
-        "command": "prettyprint.helloWorld",
+        "command": "prettyprint",
         "title": "Hello World"
       }
     ],
     "keybindings": [
       {
-          "command": "prettyprint.helloWorld",
+          "command": "prettyprint",
           "key": "shift+alt+f",
           "when": "editorTextFocus"
       }
