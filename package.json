@@ -1,9 +1,9 @@
 {
   "name": "prettyprint",
-  "displayName": "PrettyPrintXML-&lt;&gt;",
+  "displayName": "PrettyPrintXML-TagReplace",
   "publisher": "Splitner",
   "description": "",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.96.0"
   },
