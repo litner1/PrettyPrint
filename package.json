@@ -1,9 +1,9 @@
 {
   "name": "prettyprint",
-  "displayName": "PrettyPrint",
+  "displayName": "PrettyPrintXML-&lt;&gt;",
   "publisher": "Splitner",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.96.0"
   },
@@ -15,13 +15,13 @@
   "contributes": {
     "commands": [
       {
-        "command": "prettyprint",
-        "title": "Hello World"
+        "command": "PrettyPrintXML",
+        "title": "PrettyPrintXML"
       }
     ],
     "keybindings": [
       {
-          "command": "prettyprint",
+          "command": "PrettyPrintXML",
           "key": "shift+alt+f",
           "when": "editorTextFocus"
       }
