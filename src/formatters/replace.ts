@@ -49,11 +49,13 @@ export async function lineSplit(editor: vscode.TextEditor) {
     let newText = text
     newText = newText.replaceAll("< ", "f561aaf6ef0bf14d4208bb46a4ccb3ad");//replacing not tags with random hash
     newText = newText.replaceAll(" >", "f0a4058fd33489695d53df156b77c724");
+
     newText = newText.replaceAll("<", "\n<");
     newText = newText.replaceAll("\n</", "</");
     newText = newText.replaceAll("><", ">\n<");
     newText = newText.replaceAll("> <", ">\n<");
     newText = newText.replaceAll("> ", ">");
+
     newText = newText.replaceAll("f561aaf6ef0bf14d4208bb46a4ccb3ad", "< ");
     newText = newText.replaceAll("f0a4058fd33489695d53df156b77c724", " >");
 
@@ -84,8 +86,10 @@ export async function tabulate(editor: vscode.TextEditor) {
 
     for (let i = 0; i < lines.length; i++) {
         let tmp = lines[i]
-        if (tmp.startsWith("<?xml"))
+        if (tmp.startsWith("<?xml")||tmp.startsWith("<!--")){
+            lines[i] = addTab(lines[i], tabCounter);
             continue;
+        }
         lines[i] = addTab(lines[i], tabCounter);
         if (tmp.startsWith("</")) {
             tabCounter--;

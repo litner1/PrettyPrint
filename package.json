@@ -3,14 +3,16 @@
   "displayName": "PrettyPrintXML-TagReplace",
   "publisher": "Splitner",
   "description": "",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "engines": {
     "vscode": "^1.96.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:xml"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -23,8 +25,15 @@
       {
           "command": "PrettyPrintXML",
           "key": "shift+alt+f",
-          "when": "editorTextFocus"
+          "when": "editorTextFocus && editorLangId == xml"
       }
+  ],
+  "languages": [
+    {
+      "id": "xml",
+      "aliases": ["XML", "xml"],
+      "extensions": [".xml"]
+    }
   ]
   },
   "scripts": {
